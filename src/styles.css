@@ -42,3 +42,16 @@ body {
   text-align: center;
   padding-top: 20px;
 }
+
+.button3 {
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  border-radius: 20px;
+  background-color: aqua;
+  border: 3px solid black;
+  margin-left: 50px;
+  margin-top: 25px;
+  text-align: center;
+  padding-top: 20px;
+}
