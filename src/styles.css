@@ -1,5 +1,6 @@
 body {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-color: pink;
   display: flex;
   justify-content: center;
@@ -14,7 +15,7 @@ body {
   background-color: aqua;
   border: 3px solid black;
   text-align: center;
-  padding-top: 30px;  
+  padding-top: 30px;
 }
 
 .button1 {
@@ -44,6 +45,19 @@ body {
 }
 
 .button3 {
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  border-radius: 20px;
+  background-color: aqua;
+  border: 3px solid black;
+  margin-left: 50px;
+  margin-top: 25px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.button4 {
   width: 100px;
   height: 50px;
   font-size: 15px;

@@ -1,9 +1,10 @@
-//random burger generator
+//Random burger generator
 
 const beerDisplay = document.querySelector(".name");
 const button1 = document.querySelector(".button1");
 const button2 = document.querySelector(".button2");
 const button3 = document.querySelector(".button3");
+const button4 = document.querySelector(".button4");
 
 //GET - Request
 function getData() {
@@ -59,7 +60,56 @@ function editData(data) {
     });
 }
 //DELETE -Request
-function deleteData() {}
+function deleteData(link3) {
+  fetch(link3, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      //data is empty -deleted
+      console.log("Success: ", data);
+      beerDisplay.innerHTML = "Object Deleted";
+    })
+    .catch((error) => {
+      console.error("Error: ", error);
+      beerDisplay.innerHTML = "Error DELETE";
+    });
+}
+
+//DELETE-data
+const link3 = "https://my-burger-api.herokuapp.com/burgers/7";
+const data3 = {
+  id: 7,
+  name: "MEISTER ALLER KLASSEN",
+  restaurant: "Burgermeister",
+  web: "https://burger-meister.de",
+  description: "Fast food joint located in a public toilet? Why on earth?!",
+  ingredients: [
+    "2 x meat",
+    "2 x cheese",
+    "bacon",
+    "barbequesauce",
+    "jalapenos",
+  ],
+  addresses: [
+    {
+      addressId: 0,
+      number: "1",
+      line1: "Potsdamer Platz",
+      line2: "Berlin",
+      postcode: "10785",
+      country: "Germany",
+    },
+    {
+      addressId: 1,
+      number: "45",
+      line1: "Eberswalder, Schönhauser Allee",
+      line2: "Berlin",
+      postcode: "10435",
+      country: "Germany",
+    },
+  ],
+};
 
 //PUT-data
 const link2 = "https://my-burger-api.herokuapp.com/burgers/4";
@@ -125,3 +175,4 @@ const data1 = {
 button1.addEventListener("click", getData);
 button2.addEventListener("click", postData(data1));
 button3.addEventListener("click", editData(data2));
+button4.addEventListener("click", deleteData(link3));
